@@ -42,7 +42,7 @@ export default function Add() {
   };
 
   return (
-    <main className=" p-6">
+    <main className="p-6">
       <form onSubmit={add} className="flex flex-col items-center gap-3">
         <div className="join mb-5">{a_buttons}</div>
         <input
