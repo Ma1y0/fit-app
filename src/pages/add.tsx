@@ -17,7 +17,7 @@ export default function Add() {
     { type: "walk", icon: <FaWalking size={icon_size} /> },
     { type: "swim", icon: <FaSwimmer size={icon_size} /> },
     { type: "bike", icon: <FaBiking size={icon_size} /> },
-    { type: "fitness", icon: <IoMdFitness size={22} /> },
+    { type: "fitness", icon: <IoMdFitness size={icon_size} /> },
   ];
 
   const a_buttons = activities.map((x) => (
