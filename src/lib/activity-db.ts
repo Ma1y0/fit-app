@@ -3,6 +3,7 @@ export type ActivityType = "walk" | "swim" | "bike" | "fitness";
 export interface Activity {
   type: ActivityType;
   time: number;
+  note: string;
 }
 
 export function addActivity(a: Activity) {

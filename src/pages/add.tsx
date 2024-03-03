@@ -11,6 +11,7 @@ interface ActivityButton {
 export default function Add() {
   const [activity, setActivity] = useState<ActivityType>("walk");
   const [time, setTime] = useState("");
+  const [note, setNote] = useState("");
 
   const icon_size = 20;
   const activities: ActivityButton[] = [
@@ -34,15 +35,16 @@ export default function Add() {
   const add = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    addActivity({ type: activity, time: Number(time) });
+    addActivity({ type: activity, time: Number(time), note: note });
 
     setTime("");
+    setNote("");
   };
 
   return (
     <main className=" p-6">
-      <form onSubmit={add} className="flex flex-col items-center gap-10">
-        <div className="join">{a_buttons}</div>
+      <form onSubmit={add} className="flex flex-col items-center gap-3">
+        <div className="join mb-5">{a_buttons}</div>
         <input
           value={time}
           onChange={(e) => setTime(e.target.value)}
@@ -50,6 +52,12 @@ export default function Add() {
           placeholder="How long?"
           className="input input-bordered"
           required
+        />
+        <textarea
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          placeholder="Note"
+          className="textarea-lg textarea textarea-bordered"
         />
       </form>
     </main>
